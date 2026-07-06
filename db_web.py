@@ -13,7 +13,7 @@ integrantes = [("Bryan Castillo", "cisco123"), ("Bastian Inostroza", "cisco456")
 for nombre, password in integrantes:
     hash_pass = hashlib.sha256(password.encode()).hexdigest()
     # Se inserta el usuario (esto se ejecutará cada vez que corras el script)
-    cursor.execute("INSERTA usuarios (nombre, password_hash) VALUES (?, ?)", (nombre, hash_pass))
+    cursor.execute("INSERT INTO usuarios (nombre, password_hash) VALUES (?, ?)", (nombre, hash_pass))
 
 conexion.commit()
 print("Base de datos 'usuarios.db' creada. Usuarios y hashes almacenados.")
